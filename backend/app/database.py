@@ -23,7 +23,10 @@ def test_connection():
     with engine.connect() as connection:
         result = connection.execute(text("SELECT 1"))
         return result.scalar()
+
+
 from backend.app.models import Base
+
 
 def create_tables():
     Base.metadata.create_all(bind=engine)
